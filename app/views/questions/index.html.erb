@@ -1,0 +1,12 @@
+<h2>rails問題アプリ</h2>
+<%question_number += 1%>
+<%= form_tag(judge_last_question) do %>
+    question = Qustion.find_by_question_number(question_number)
+    <h1>第<%=question_number%>問</h1>
+    <%=question.problem%></br>
+      <% question.choices.each do |choice| %>
+        <label><%= radio_button "question", question.id, choice.id %><%=choice.content%></label></br>
+      <% end %>
+  <% end %>
+  <%= submit_tag('答え合わせ') %>
+<% end %>
