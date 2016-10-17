@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Question.create(id: 1, problem: "ヒトデを英語にするとどれ？", answer: 5)
-Question.create(id: 2, problem: "クマを英語にするとどれ？", answer: 10)
-Question.create(id: 3, problem: "イルカを英語にするとどれ？", answer: 15)
-Question.create(id: 4, problem: "カエルを英語にするとどれ？", answer: 20)
+Question.create(id: 1, content: "ヒトデを英語にするとどれ？", answer: 5)
+Question.create(id: 2, content: "クマを英語にするとどれ？", answer: 10)
+Question.create(id: 3, content: "イルカを英語にするとどれ？", answer: 15)
+Question.create(id: 4, content: "カエルを英語にするとどれ？", answer: 20)
 
 Choice.create(:id => 5, :question_id => 1, :content => "Starfish")
 Choice.create(:id => 6, :question_id => 1, :content => "bear")

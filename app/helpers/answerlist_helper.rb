@@ -1,2 +1,0 @@
-module AnswerlistHelper
-end

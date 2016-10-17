@@ -1,2 +1,7 @@
 <h1>Result#index</h1>
 <p>Find me in app/views/result/index.html.erb</p>
+<% @result_list.results.each do |result| %>
+  <%= result.question.content %>
+  <%= result.is_correct %>
+  <br>
+<% end %>
