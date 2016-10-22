@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     if session[:result_list_id].nil?
       result_list = ResultList.create(user_id: current_user.id)
@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     end
     session[:questions] ||= Question.order("RANDOM()").limit(40)
     session[:question_number] ||= 0
-    
+
     set_question
   end
 
@@ -19,6 +19,8 @@ class QuestionsController < ApplicationController
     result = Result.create(is_correct: is_correct, question_id: prev_question.id)
     result_list = ResultList.find(session[:result_list_id])
     result_list.results << result
+    result_list.points = result_list.results.select("is_correct").where(is_correct: true).count * 2.5
+    result_list.save
     if session[:question_number] >= 3
       restart
       redirect_to results_path

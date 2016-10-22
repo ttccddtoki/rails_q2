@@ -10,5 +10,9 @@
       </label>
       </br>
     <% end %>
-  <%= submit_tag('答え合わせ') %>
+    <% if session[:question_number].to_i + 1 == 4 %>
+      <%= submit_tag('結果を表示') %>
+    <% else %>
+      <%= submit_tag('次の問題へ') %>
+    <% end %>
 <% end %>
