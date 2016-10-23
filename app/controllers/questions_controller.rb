@@ -15,7 +15,11 @@ class QuestionsController < ApplicationController
   def next_question
     #INFO 前の問題(@question)を取得
     prev_question = Question.find(params[:question_id])
-    is_correct = params[:choice][:id].to_i == prev_question.answer
+    if params[:choice].blank?
+      is_correct = false
+    else
+      is_correct = params[:choice][:id].to_i == prev_question.answer
+    end
     result = Result.create(is_correct: is_correct, question_id: prev_question.id)
     result_list = ResultList.find(session[:result_list_id])
     result_list.results << result
