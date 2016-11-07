@@ -1,8 +1,9 @@
-<h1>Result#index</h1>
-<p>Find me in app/views/result/index.html.erb</p>
+<%= link_to "過去の成績", { controller: 'result_lists', action: 'index'} %></br>
 <% @result_list.results.each do |result| %>
   <%= result.question.content %>
   <%= result.is_correct %>
   <br>
 <% end %>
 得点：<%= @result_list.points %>点
+
+<%= link_to "もう一度勉強する！", { controller: 'questions', action: 'show', id: '1' } %>

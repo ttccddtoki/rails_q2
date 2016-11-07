@@ -1,5 +1,5 @@
 class ResultListsController < ApplicationController
   def index
-    @result_lists = ResultList.all
+    @result_lists = current_user.result_lists.all
   end
 end

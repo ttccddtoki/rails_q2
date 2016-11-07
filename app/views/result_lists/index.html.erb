@@ -1,3 +1,6 @@
 <% @result_lists.each do |result_list| %>
 <%= link_to "第#{result_list.id}回", results_path(result_list_id: result_list.id) %>
+<%= result_list.created_at %></br>
 <% end %>
+</br>
+<%= link_to '戻る', results_path(result_list_id: ResultList.last.id) %>
