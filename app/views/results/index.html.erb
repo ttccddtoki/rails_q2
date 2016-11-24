@@ -2,7 +2,8 @@
 <% @result_list.results.each do |result| %>
   <%= result.question.content %>
   <%= result.is_correct %>
-  <br>
+  <% right_choice = result.question.right_choice %>
+      <%= right_choice.content %></br>  <br>
 <% end %>
 得点：<%= @result_list.points %>点
 

@@ -1,6 +1,9 @@
 <% @result_lists.each do |result_list| %>
-<%= link_to "第#{result_list.id}回", results_path(result_list_id: result_list.id) %>
-<%= result_list.created_at.strftime("%Y年%m月%d日 %H時%M分") %></br>
+<% if(current_user.id == result_list.user_id) %>
+<%= link_to "#{result_list.points}点", results_path(result_list_id: result_list.id) %>
+解いた日時[<%= result_list.created_at.strftime("%Y年%m月%d日 %H時%M分") %>]
+</br>
+<% end %>
 <% end %>
 </br>
 <%= link_to '戻る', results_path(result_list_id: ResultList.last.id) %>
