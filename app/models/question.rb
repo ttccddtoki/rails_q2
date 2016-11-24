@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
     ids.each_with_index.map do |id, index|
       order_by << "WHEN id='#{id}' THEN #{index}"
     end
-    order_by << "end"
+    order_by << 'end'
     order(order_by.join(" "))
   end
 end
