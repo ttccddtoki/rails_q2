@@ -4,6 +4,7 @@ gem 'rails_admin'
 gem 'rb-readline'
 gem 'rails_12factor', group: :production
 
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
