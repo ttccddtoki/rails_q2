@@ -62,7 +62,7 @@ class QuestionsController < ApplicationController
 
   def get_questions
     session[:questions] ||= Question.order("RANDOM()").limit(40).pluck(:id)
-    questions = Question.where(id: session[:questions])
+    questions = Question.where(id: session[:questions]).order_by_ids(session[:questions])
   end
 
 end
