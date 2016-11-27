@@ -16,7 +16,7 @@ Choice.create(id: 7, question_id: 10, content: "rails c")
 #Choice.create(:id => 8, :question_id => 1, :content => "Frog")
 
 Choice.create(id: 9, question_id: 2, content: "rails db:migrate")
-Choice.create(id: 10, question_id: 2, content: "rake db migrate" )
+Choice.create(id: 10, question_id: 2, content: "rake db:migrate" )
 Choice.create(id: 11, question_id: 2, content: "rails db:create")
 Choice.create(id: 12, question_id: 2, content: "rake db:create")
 
