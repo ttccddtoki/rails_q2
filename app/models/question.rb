@@ -8,6 +8,5 @@ class Question < ActiveRecord::Base
     end
     order_by << "end"
     order(order_by.join(" "))
-
   end
 end
