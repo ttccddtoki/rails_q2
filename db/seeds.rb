@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Question.create(id: 1, content: "railsのサーバーを起動する時のコマンドはどれ？", answer: 6)
+Question.create(id: 111, content: "railsのサーバーを起動する時のコマンドはどれ？", answer: 6)
 Question.create(id: 2, content: "データベースを作成する時のコマンドは？", answer: 12)
 Question.create(id: 3, content: "config/routes.rbに定義したルーティングを出力する rake タスクとして適切なものは？", answer: 15)
 Question.create(id: 4, content: "ファイルの作成/変更/削除をgitのインデックスに追加するgitのコマンドは？", answer: 20)
