@@ -1,0 +1,17 @@
+<h2>rails問題アプリ</h2>
+<%= form_tag problem_path(params[:id]), method: "PUT" do %>
+  <h1>第<%= @problems.index(@problem) + 1 %>問</h1>
+    <%= @problem.content %></br>
+    <% @problem.choices.shuffle.each do |choice| %>
+      <label>
+        <%= radio_button "choice", "id", choice.id %>
+        <%= choice.content %>
+      </label>
+      </br>
+    <% end %>
+    <% if @problem_index == 4 %>
+      <%= submit_tag('結果を表示') %>
+    <% else %>
+      <%= submit_tag('次の問題へ') %>
+    <% end %>
+<% end %>
