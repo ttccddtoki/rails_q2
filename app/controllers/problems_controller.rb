@@ -38,7 +38,8 @@ class ProblemsController < ApplicationController
       next_problem_id = params[:id].to_i + 1
       redirect_to problem_path(next_problem_id)
     end
-    result_list.points = result_list.results.where(is_correct: true).count * 25
+    #railsは一問25点
+    result_list.points = result_list.results.where(is_correct: true).count * 2
     result_list.save
     current_user.result_lists << result_list
   end
